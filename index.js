@@ -13,10 +13,6 @@
                     authkey : {
                         value : '<!----- Authentication Key ------!>',
                         string : 'authkey='
-                    },
-                    response : {
-                        value : 'json',
-                        string : '&response='
                     }
                 }
 
@@ -52,10 +48,24 @@
                     campaign : {
                         value : '',
                         string : '&campaign='
+                    },
+                    response : {
+                        value : 'json',
+                        string : '&response='
                     }
                 }
             };
         /* ----- SMS ADMIN FUNCTION | STOP ------ */
+
+        /* ------ SEND MESSAGE | START ------ */
+            SMSAdmin.prototype.setMessage = function(params){
+                if(params != undefined || params != ""){
+                    return "&message="+params;
+                }else{
+                    return undefined;
+                }
+            }
+        /* ------ SEND MESSAGE | STOP ------ */
 
         /* ------ SEND MESSAGE | START ------ */
             SMSAdmin.prototype.sendSMS = function(params){
@@ -80,7 +90,7 @@
                     message = this.setMessage(params.message);
                     APIurl = APIurl + message + number + this.setURL();
                     let temp='';
-                    console.log(APIurl);
+
                     return new Promise((resolve, reject) => {
                         https.get(APIurl,
                             (res) => {
