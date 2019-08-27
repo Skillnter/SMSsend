@@ -1,0 +1,20 @@
+{
+  "name": "sms-send",
+  "version": "1.0.0",
+  "description": "This module is used to send sms using msg91 api.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "SMS",
+    "MSG91",
+    "SendSMS"
+  ],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Skillnter/SMSsend"
+  },
+  "author": "Himanshu Bansal <skillhimanshubansal@gmail.com>",
+  "license": "ISC"
+}
